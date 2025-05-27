@@ -1,0 +1,201 @@
+@import '../variables';
+
+.hover-effects {
+  min-height: 100vh;
+  padding: 2rem;
+  background-color: #f0f4f8;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  &__title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+    text-align: center;
+  }
+  
+  &__intro {
+    max-width: 800px;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+  }
+  
+  &__showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  &__container {
+    background-color: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    
+    &--active {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  &__container-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  &__demo {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+  }
+  
+  &__description {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #666;
+  }
+  
+  &__back-button {
+    margin-top: 3rem;
+    padding: 0.8rem 1.5rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background-color: #555;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+/* Magnetic Button Effect */
+.magnetic {
+  &__demo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  &__button {
+    position: relative;
+    padding: 1rem 2rem;
+    background-color: #4a6cf7;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    
+    &:hover {
+      background-color: #3a5ce5;
+    }
+  }
+}
+
+/* Glow Effect */
+.glow {
+  &__demo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  &__item {
+    padding: 1.5rem 2.5rem;
+    background-color: #222;
+    color: white;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    
+    &:hover {
+      box-shadow: 0 0 25px rgba(74, 108, 247, 0.6);
+      
+      &:before {
+        opacity: 1;
+      }
+    }
+    
+    &:before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+      background: linear-gradient(45deg, #4a6cf7, #f749a0);
+      border-radius: 12px;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+  }
+}
+
+/* Content Reveal Effect */
+.reveal {
+  &__demo {
+    perspective: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  &__card {
+    width: 200px;
+    height: 120px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    
+    &:hover {
+      transform: rotateY(180deg);
+    }
+  }
+  
+  &__face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    padding: 1rem;
+    font-weight: 500;
+  }
+  
+  &__face--front {
+    background-color: #4a6cf7;
+    color: white;
+  }
+  
+  &__face--back {
+    background-color: #f749a0;
+    color: white;
+    transform: rotateY(180deg);
+  }
+}
