@@ -1,5 +1,5 @@
 @use 'sass:color';
-@import 'variables';
+@use 'variables' as *;
 
 // Generic page styles using BEM methodology
 .page {
